@@ -1,0 +1,140 @@
+@model SDK.Core.DashboardResponse
+
+@{
+    ViewData["Title"] = "ادارة محتوى نظام النماذج";
+}
+
+<div class="flex flex-col flex-1 p-3 dark:bg-gray-950">
+    <div class="flex flex-col">
+        <h2 class="font-bold">الصفحة الرئيسية</h2>
+        <h3>الصفحة الرئيسية</h3>
+    </div>
+    <div class="mt-8 rounded-2xl   bg-white dark:bg-gray-900 w-full h-auto min-h-[calc(100vh-15rem)] p-10">
+        <div class="grid grid-cols-4 pb-4">
+            <div class="w-full max-w-full px-3 text-center flex-0 ">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        تصنيفات النماذج </h6>
+                    <h4 class="font-bold">
+                        <span>@Model?.FormTemplateCategoryCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 text-center flex-0 ">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        تصنيفات نماذج المعسكرات</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateBootcampFormsCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 mt-6 text-center flex-0 lg:mt-0">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        تصنيفات نماذج الاختبارات</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateCategoryExamsFormsCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 mt-6 text-center flex-0 lg:mt-0">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        تصنيفات النماذج العامة</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateCategoryOthersCount</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 pb-4">
+            <div class="w-full max-w-full px-3 text-center flex-0 ">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        النماذج </h6>
+                    <h4 class="font-bold">
+                        <span>@Model?.FormTemplateCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 text-center flex-0 ">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        نماذج المعسكرات</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateBootcampFormsCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 mt-6 text-center flex-0 lg:mt-0">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        نماذج الاختبارات</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateExamsFormsCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 mt-6 text-center flex-0 lg:mt-0">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        النماذج العامة</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateOthersCount</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 pb-4">
+            <div class="w-full max-w-full px-3 text-center flex-0 ">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        نماذج المعسكرات الفعالة</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateBootcampFormsActiveCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 mt-6 text-center flex-0 lg:mt-0">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        نماذج الاختبارات الفعالة</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateExamsFormsActiveCount</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="w-full max-w-full px-3 mt-6 text-center flex-0 lg:mt-0">
+                <div class="py-4 border border-dashed rounded-lg border-slate-400">
+                    <h6
+                        class="relative mb-0 text-transparent z-1 bg-clip-text bg-gradient-to-tl from-purple-700 to-pink-500">
+                        النماذج العامة الفعالة</h6>
+                    <h4 class="font-bold dark:text-white">
+                        <span>@Model?.FormTemplateOthersActiveCount</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

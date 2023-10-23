@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>TuwaiqFormsIntegrationsSDK</PackageId>
+        <Title>Tuwaiq Forms Integrations SDK</Title>
+        <Authors>Ahmed Badawi, Tuwaiq</Authors>
+        <Copyright>Tuwaiq</Copyright>
+        <PackageIcon>logo.jpeg</PackageIcon>
+        <PackageProjectUrl>Tuwaiq.edu.sa</PackageProjectUrl>
+        <PackageLicenseUrl>Tuwaiq.edu.sa</PackageLicenseUrl>
+        <RepositoryUrl>Tuwaiq.edu.sa</RepositoryUrl>
+        <Version>1.0.22</Version>
+        <Company>Tuwaiq Academy</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="IdentityModel.AspNetCore" Version="4.3.0" />
+        <PackageReference Include="Refit" Version="7.0.0" />
+        <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+        <PackageReference Include="Refit.Newtonsoft.Json" Version="7.0.0" />
+        <PackageReference Include="RestSharp" Version="110.2.0" />
+        <PackageReference Include="Tapper" Version="1.8.4" />
+        <PackageReference Include="Tapper.Analyzer" Version="1.8.4">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Tapper.Attributes" Version="1.8.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="logo.jpeg">
+            <Pack>True</Pack>
+            <PackagePath />
+        </None>
+        <None Remove="obj\**" />
+        <None Update="logo.jpeg">
+          <Pack>True</Pack>
+          <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="obj\**" />
+
+
+
+    </ItemGroup>
+
+
+
+
+</Project>

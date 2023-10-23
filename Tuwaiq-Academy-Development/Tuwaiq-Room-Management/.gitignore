@@ -1,0 +1,99 @@
+**/bin/
+**/obj/
+**/Logs/
+**/keys/
+.idea
+.config
+**/node_modules
+**/.yarn
+WebUI/wwwroot/dist/**
+
+# .NET Core
+####################
+# Build output
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.csproj.user
+*.pidb
+*.resharper
+*.[Tt]est[Rr]esult*
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Oo]bj/
+[Ll]og[sS]/
+[Nn]b[Rr]eceipt[Oo]rganizationFile.txt
+_GruntFiles/
+_TsBuildInfo/
+_Package/
+*.dll
+*.pdb
+*.exe
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# .NET Core CLI
+####################
+*.nuget.props
+*.paket.props
+*.paket.targets
+
+# TypeScript
+####################
+# Compiled output
+*.js.map
+
+# TS Lint
+tslint.json
+tslint.yaml
+tslint.yml
+
+# Package managers
+####################
+# Yarn
+# Yarn integrity file
+.yarn-integrity
+
+# PNPM
+.pnpm
+pnpm-lock.yaml
+
+# Node.js
+####################
+# Package files
+node_modules/
+npm-debug.log
+yarn.lock
+
+# Rider
+####################
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+####################
+.vscode/
+*.code-workspace

@@ -1,0 +1,81 @@
+[{
+        "value": "riyadh",
+        "label": "الرياض"
+    },
+    {
+        "value": "jeddah",
+        "label": "جدة"
+    },
+    {
+        "value": "makkah",
+        "label": "مكة المدينة"
+    },
+    {
+        "value": "madinah",
+        "label": "المدينة المنورة"
+    },
+    {
+        "value": "dammam",
+        "label": "الدمام"
+    },
+    {
+        "value": "taif",
+        "label": "الطائف"
+    },
+    {
+        "value": "buraydah",
+        "label": "بريدة"
+    },
+    {
+        "value": "tabuk",
+        "label": "تبوك"
+    },
+    {
+        "value": "khamis-mushait",
+        "label": "خميس مشيط"
+    },
+    {
+        "value": "hail",
+        "label": "حائل"
+    },
+    {
+        "value": "al-hofuf",
+        "label": "الهفوف"
+    },
+    {
+        "value": "al-mubarraz",
+        "label": "المبرز"
+    },
+    {
+        "value": "al-jubail",
+        "label": "الجبيل"
+    },
+    {
+        "value": "al-khobar",
+        "label": "الخبر"
+    },
+    {
+        "value": "najran",
+        "label": "نجران"
+    },
+    {
+        "value": "al-kharj",
+        "label": "الخرج"
+    },
+    {
+        "value": "yanbu",
+        "label": "ينبع"
+    },
+    {
+        "value": "arar",
+        "label": "عرعر"
+    },
+    {
+        "value": "al-qurayyat",
+        "label": "القريات"
+    },
+    {
+        "value": "dhahran",
+        "label": "الظهران"
+    }
+]

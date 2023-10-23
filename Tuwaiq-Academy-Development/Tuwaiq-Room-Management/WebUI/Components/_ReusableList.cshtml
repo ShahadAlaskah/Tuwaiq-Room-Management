@@ -1,0 +1,26 @@
+@model IEnumerable<dynamic>
+@{
+    var columns = ViewBag.Columns;
+}
+
+<table>
+    <thead>
+        <tr>
+            @foreach (var column in columns)
+            {
+                <th>@column.Label</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @foreach (var column in columns)
+                {
+                    <td>@item[column.Key]</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

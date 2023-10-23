@@ -1,0 +1,15 @@
+@model List<string>
+<div class="input">
+    <label for="main.age" class="input-label">@Model[0]</label>
+    @* create two radio as buttons using tailwind *@
+    <div class="flex gap-2">
+        <template x-for="item in @Model[1]">
+            <div
+                class="flex items-center justify-center w-full h-12 px-3 py-5 leading-6 transition-all duration-200 ease-in border rounded-lg hover:cursor-pointer hover:text-primary-500 hover:border-b-primary-600 hover:border-b-4"
+                :class="@Model[2] === item.value ? 'text-primary-500 bg-primary-25 border-primary-600' : 'text-gray-700 bg-white border border-gray-300'"
+                x-on:click="@Model[2] = item.value">
+                <div x-text="item.label"></div>
+            </div>
+        </template>
+    </div>
+</div>

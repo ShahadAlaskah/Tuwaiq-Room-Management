@@ -1,0 +1,128 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BT.Logger.Abstraction" Version="1.0.3" />
+        <PackageReference Include="MassTransit" Version="8.1.0" />
+        <PackageReference Include="MassTransit.Quartz" Version="8.1.0" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.0" />
+        <PackageReference Include="MediatR" Version="12.1.1" />
+        <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.5.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.11" />
+        <PackageReference Include="Imageflow.Server" Version="0.8.1" />
+        <PackageReference Include="Imageflow.Server.DiskCache" Version="0.8.1" />
+        <PackageReference Include="Imageflow.Server.HybridCache" Version="0.8.1" />
+        <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.7.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.11" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.10" />
+        <PackageReference Include="ExpressionDebugger" Version="2.2.1" />
+
+        <PackageReference Include="LazyCache" Version="2.4.0" />
+        <PackageReference Include="LazyCache.AspNetCore" Version="2.4.0" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+        <PackageReference Include="Hashids.net" Version="1.7.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+
+        <PackageReference Include="Humanizer.Core" Version="2.14.1" />
+        <PackageReference Include="Humanizer.Core.ar" Version="2.14.1" />
+
+        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+        <PackageReference Include="Serilog.Enrichers.AspNetCore.HttpContext" Version="1.0.1" />
+        <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+        <PackageReference Include="Serilog.Enrichers.EnrichedProperties" Version="1.0.63" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+        <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+        <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+        <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.3.0" />
+        <PackageReference Include="Serilog.Sinks.SQLite" Version="6.0.0" />
+        <PackageReference Include="itext7" Version="8.0.1" />
+        <PackageReference Include="DotNetCore.NPOI" Version="1.2.3" />
+        <PackageReference Include="ValueInjecter" Version="3.2.0" />
+
+
+        <PackageReference Include="OpenIddict.Abstractions" Version="4.8.0" />
+        <PackageReference Include="OpenIddict.Validation.AspNetCore" Version="4.8.0" />
+        <PackageReference Include="OpenIddict.Validation.SystemNetHttp" Version="4.8.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+      <Content Update="appsettings.Production.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+      <Content Remove="obj\**" />
+      <Content Remove="Logs\logs20230514.json" />
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Logs\" />
+      <Folder Include="Storage\Search\" />
+      <Folder Include="Views\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="obj\**" />
+      <Compile Update="Resources\SharedResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SharedResource.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\SharedResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SharedResource.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+      <EmbeddedResource Update="Resources\SharedResource.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="obj\**" />
+      <None Remove="Storage\Search\_1j.si" />
+      <None Remove="Storage\Search\segments_2o" />
+      <None Remove="Storage\Search\_1j_Lucene41_0.tim" />
+      <None Remove="Storage\Search\_1k.cfs" />
+      <None Remove="Storage\Search\_1k.si" />
+      <None Remove="Storage\Search\_1j.fnm" />
+      <None Remove="Storage\Search\_1j_Lucene41_0.tip" />
+      <None Remove="Storage\Search\_1j.nvd" />
+      <None Remove="Storage\Search\_1j_Lucene41_0.pos" />
+      <None Remove="Storage\Search\_1j.nvm" />
+      <None Remove="Storage\Search\_1k.cfe" />
+      <None Remove="Storage\Search\_1j.fdt" />
+      <None Remove="Storage\Search\_1j_Lucene41_0.doc" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Infrastructure.Persistence.Ef\Infrastructure.Persistence.Ef.csproj" />
+      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

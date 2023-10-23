@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="LazyCache" Version="2.4.0" />
+        <PackageReference Include="MediatR" Version="12.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Application\Application.csproj" />
+        <ProjectReference Include="..\Domain\Domain.csproj" />
+        <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Microsoft.AspNetCore.Http.Abstractions" />
+      <None Remove="obj\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="GenerateIUnitOfWork.txt">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>GenerateIUnitOfWork.tt</DependentUpon>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+</Project>

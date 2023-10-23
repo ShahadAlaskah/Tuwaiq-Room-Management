@@ -1,0 +1,12 @@
+@model Application.Dto.AssetTypeDto
+
+<div class="flex items-center justify-start">
+    @if (!string.IsNullOrEmpty(Model.Icon))
+    {
+        <p>
+            <img alt="@Model.Name" src="@Model.Icon"/>
+        </p>
+    }
+    <p>@Model.Name</p>
+
+</div>

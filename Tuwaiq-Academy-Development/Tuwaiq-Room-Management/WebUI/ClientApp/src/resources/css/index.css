@@ -1,0 +1,266 @@
+@import 'toastify-js/src/toastify.css';
+@import 'jsuites/dist/jsuites.css';
+@import 'animate.css'; 
+@import 'choices.js/public/assets/styles/choices.min.css';
+@import "tabulator-tables/dist/css/tabulator_materialize.min.css";
+@import "flatpickr/dist/flatpickr.min.css";
+@import 'sweetalert2/dist/sweetalert2.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    overflow: scroll !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth !important;
+    font-family: 'Next', 'sans-serif';
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: Next;
+    font-weight: 400;
+    src: url("../fonts/Next.ttf");
+}
+
+@font-face {
+    font-family: Next;
+    font-weight: 200;
+    src: url("../fonts/Next-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: Next;
+    font-weight: 300;
+    src: url("../fonts/Next-Light.ttf");
+}
+
+@font-face {
+    font-family: Next;
+    font-weight: 500;
+    src: url("../fonts/Next-Medium.ttf");
+}
+
+@font-face {
+    font-family: Next;
+    font-weight: 700;
+    src: url("../fonts/Next-Bold.ttf");
+}
+
+@font-face {
+    font-family: Next;
+    font-weight: 800;
+    src: url("../fonts/Next-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: Next;
+    font-weight: 900;
+    src: url("../fonts/Next-Black.ttf");
+}
+
+
+[x-cloak] {
+    display: none !important;
+}
+
+.ts-wrapper {
+    @apply mt-2;
+}
+
+.ts-control {
+    @apply !pr-10;
+}
+
+.input-text {
+    @apply leading-6 text-gray-700 border border-gray-300 rounded-lg focus:border-primary-400 focus:ring-0 disabled:bg-gray-200 py-3;
+}
+
+.input-number {
+    @apply leading-6 text-gray-700 border border-gray-300 rounded-lg focus:border-primary-400 focus:ring-0 disabled:bg-gray-200 py-3;
+}
+
+.input-select {
+    @apply rounded-lg disabled:bg-gray-200 text-light-gray-700 border-light-gray-300 focus:ring-0 focus:border-light-gray-300;
+}
+
+.input-label {
+    @apply font-medium leading-5 text-gray-800;
+}
+
+.input {
+    @apply flex flex-col gap-3 w-full ;
+}
+
+.choices__inner {
+    @apply bg-white rounded-lg text-light-gray-700 border-light-gray-300 focus:ring-0 focus:border-light-gray-300;
+}
+
+.choices__list--single {
+    @apply mr-4;
+}
+
+.choices__item {
+    @apply text-[1rem] font-medium;
+}
+
+.tab-item.active ~ .tab-item {
+
+    @apply !border-transparent !text-gray-500;
+}
+
+.jcalendar-input, .date-input {
+    background-image: url('../../../../wwwroot/icons/date.svg');
+    background-position: 4%;
+    background-repeat: no-repeat;
+    padding-left: 0.75rem;
+}
+
+.jcalendar-input:disabled, .date-input:disabled {
+    background-image: url('../../../../wwwroot/icons/date-disabled.svg');
+    background-position: 4%;
+    padding-left: 0.75rem;
+    background-repeat: no-repeat;
+}
+
+
+.choices {
+    @apply w-full my-auto;
+}
+
+.input-error {
+    @apply border-red-600 !important;
+}
+
+.input-radio {
+    @apply transition-all duration-300 ease-linear bg-gray-200 border-0 rounded-md ring-0 checked:bg-success-300 focus:bg-success-300 border-success-300 focus:ring-0 checked:hover:bg-success-300 checked:focus:bg-success-300 hover:scale-110 focus:ring-success-300 text-success-300;
+}
+
+.swal2-validation-message {
+    @apply !text-red-500 !bg-white;
+}
+
+.swal2-show {
+    animation: none !important;
+}
+
+div:where(.swal2-icon).swal2-warning.swal2-icon-show {
+    animation: none !important;
+}
+
+.tabulator {
+    @apply bg-transparent;
+}
+
+.tabulator .tabulator-tableholder .tabulator-table {
+    @apply bg-white;
+}
+
+.tabulator .tabulator-header .tabulator-col {
+    @apply text-center bg-transparent;
+}
+
+.tabulator .tabulator-header {
+    @apply text-center bg-transparent;
+
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-cell {
+    @apply text-base leading-5 text-center text-gray-600 border-l-0 border-r-0;
+}
+
+.tabulator-row {
+    @apply border-b border-gray-200;
+}
+
+.tabulator .tabulator-header {
+    @apply border-gray-200;
+}
+
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content {
+    @apply !p-2;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
+    @apply flex items-center justify-center h-full p-3 text-base font-medium leading-4 text-center text-gray-500 justify-items-center;
+}
+
+.tabulator-row.tabulator-selected {
+    @apply bg-gray-100;
+}
+
+.tabulator-row.tabulator-selected:hover {
+    @apply bg-gray-100;
+}
+
+.tabulator-row.tabulator-selected input[type="checkbox"] {
+    @apply rounded-sm bg-primary-400 focus:ring-0;
+}
+
+.tabulator-cell input[type="checkbox"] {
+    @apply bg-white border border-gray-500 rounded-sm focus:ring-0;
+}
+
+.tabulator-col-title input[type="checkbox"] {
+    @apply bg-white border border-gray-500 rounded-sm focus:ring-0;
+}
+
+.tabulator-col-title input[type="checkbox"]:checked {
+    @apply rounded-sm bg-primary-400 focus:ring-0;
+
+}
+
+.tabulator-page[data-page='first'], .tabulator-page[data-page='last'], .tabulator-page[data-page='next'], .tabulator-page[data-page='prev'] {
+    display: none !important;
+}
+
+.tabulator .tabulator-footer .tabulator-page.active {
+    @apply bg-[#F0F2F5] text-[#3B4458] rounded-lg border-0;
+}
+
+.tabulator .tabulator-footer .tabulator-page {
+    @apply text-gray-500 bg-transparent border-0;
+}
+
+.tabulator .tabulator-footer .tabulator-paginator {
+    @apply flex justify-center gap-1;
+}
+
+.tabulator .tabulator-footer .tabulator-page:last-of-type, .tabulator .tabulator-footer .tabulator-page[data-page="prev"] {
+    @apply border-0 rounded-lg;
+}
+
+.tabulator .tabulator-footer .tabulator-page:not(.disabled):hover:not(.active) {
+    @apply bg-transparent border-0 rounded-lg text-primary-500;
+}
+
+.tabulator .tabulator-footer .tabulator-page.active:not(.disabled):hover {
+    @apply bg-[#F0F2F5] text-primary-500 rounded-lg border-0;
+}
+
+textarea {
+    resize: none;
+}
+
+[dir=rtl] .choices__input {
+    @apply !ring-0 !border-0 focus:!ring-0 focus:!border-0;
+}
+
+[dir=rtl] .choices__list--multiple .choices__item {
+    @apply !border !border-primary-600 !bg-primary-50/50 !shadow !text-primary-700;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

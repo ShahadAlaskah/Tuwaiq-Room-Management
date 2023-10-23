@@ -1,0 +1,7 @@
+@model List<string>
+<button
+    class="mx-auto md:mx-0 w-72 gap-5 h-16 flex justify-center items-center px-8 py-2 font-medium transition-colors duration-200 ease-in-out bg-[#ABADF5]  rounded-xl "
+    x-on:click="@Model[0]">
+    <img src="~/icons/plus-icon.svg" alt="add-icon" class="w-6 h-6">
+    <span class="text-lg text-light-gray-25">@Model[1]</span>
+</button>

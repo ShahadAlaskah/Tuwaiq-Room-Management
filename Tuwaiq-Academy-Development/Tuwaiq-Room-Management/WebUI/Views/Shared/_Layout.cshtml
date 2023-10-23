@@ -1,0 +1,169 @@
+﻿@using Shared.Extensions
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+@{
+    // var rqf = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    // var culture = rqf?.RequestCulture.Culture;
+
+    // var isArabic = culture?.TextInfo.IsRightToLeft ?? false;
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+    // var landingPageUrl = Configuration["LandingPageUrl"];
+}
+<html dir="rtl" lang="ar">
+
+<head>
+
+    <link rel="stylesheet" href="~/dist/libs.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/app.css" asp-append-version="true" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="نظام النماذج" />
+    <meta property="og:type" content="Academy" />
+    <meta property="og:url" content="https://tuwaiqdev.com" />
+    <meta property="og:image" content="https://tuwaiqdev.com/img/logo.jpeg" />
+    <meta name="application-name" content="أكاديمية  طويق" />
+    <meta name="apple-mobile-web-app-title" content="أكاديمية طويق" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="whites" />
+    <link rel="apple-touch-icon" href="https://tuwaiqdev.com/img/logo.jpeg" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/img/logo.svg" />
+    <link rel="icon" type="image/png" href="~/img/logo.svg" />
+    <title>نظام النماذج</title>
+    @await RenderSectionAsync("Header", false)
+
+</head>
+
+<body x-data="layoutData" x-cloak class="antialiased">
+
+    <template x-if="isLoading">
+        <div class="flex items-center justify-center min-h-screen min-w-screen bg-[#FDFDFD] fixed z-[99999999] inset-0">
+            <img src="~/loading.gif" class="bg-contain" alt="" />
+        </div>
+    </template>
+    <div class="z-20 flex flex-col h-full min-h-screen" x-cloak>
+
+        <div class="z-20 bg-[#ABADF5]">
+            <div class="flex items-center justify-between px-10 pt-10 pb-16 md:py-12 md:px-24">
+                <div class="flex w-full gap-12 md:w-auto">
+                    <div class="flex justify-between w-full md:w-auto">
+                        <svg class="h-20" viewBox="0 0 55 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M54.1482 55.3789C53.1267 33.9155 43.6549 14.0549 28.1705 0.91584L27.1031 0L26.048 0.91584C10.5605 14.0941 1.08877 33.9155 0.0581095 55.3789L0 56.72L1.12547 57.2335C9.36774 61.0702 18.0993 63 27.1031 63C36.1069 63 44.8508 61.0702 53.093 57.2335L54.2185 56.72L54.1482 55.3789ZM27.0787 59.1666C18.9648 59.1666 11.0529 57.4853 3.60885 54.2014C4.86278 34.8935 13.3742 17.0543 27.0787 4.85395C40.7832 17.0543 49.2823 34.8935 50.5362 54.2014C43.0922 57.4853 35.1802 59.1666 27.0787 59.1666Z"
+                                fill="white" />
+                            <path
+                                d="M27.1023 10.6957C25.5211 12.2625 24.0317 13.9437 22.6004 15.6969L23.3619 16.4622L24.2886 17.4893L25.2153 18.4673L26.1419 19.4943L27.0441 20.5475L27.9341 21.5746L28.7905 22.6671L29.659 23.7563L30.4787 24.8585L31.2769 25.987L32.0751 27.1154L32.8367 28.257L33.5982 29.4214L34.3261 30.6251L35.054 31.8287L35.7452 33.0324L36.4486 34.2753L37.0694 35.515L37.7025 36.7939L38.3356 38.0368L38.8983 39.3157L39.4611 40.6208L39.9902 41.8997L40.5162 43.2179L41.0086 44.5327L41.5132 45.8509L41.972 47.192L42.2992 48.2321L39.3693 46.4887L39.2653 46.1747L38.4671 44.0944L37.5985 42.0502L36.7086 40.0059L35.7482 38.0008L34.7298 36.0318L33.6624 34.0889L32.537 32.1951L31.3534 30.3274L30.1239 28.5088L28.87 26.7164L27.5457 24.9599L26.1847 23.2918L24.8024 21.6498L23.3374 20.034L21.848 18.4673L20.9917 17.6267C19.5726 19.5336 18.2728 21.4634 17.0525 23.5077L17.4868 23.8707L19.1414 25.4375L20.7592 27.0794L22.3526 28.7214L23.9002 30.4026L25.4232 32.1591L26.8882 33.9515L28.3072 35.7701L29.7019 37.6378L31.0261 39.5316L32.3167 41.4614L33.4055 43.1786C32.9957 43.0151 32.5736 42.8646 32.1638 42.7272L30.9558 41.1736L29.3379 39.1685L27.6497 37.1995L25.9248 35.2566L24.1662 33.402L22.3832 31.5703L20.5543 29.791L18.6673 28.0345L16.7558 26.3533L15.8169 25.5879C14.8903 27.2692 14.0339 29.0223 13.2724 30.805L14.8658 31.9694L16.8812 33.5492L18.7346 35.08L20.5513 36.6467L22.3435 38.2887L24.0898 39.9699L25.8116 41.7264L25.9982 41.9259C25.0256 41.9749 24.0531 42.1254 23.0897 42.3642L22.9031 42.1646L21.2149 40.5227L19.4564 38.9167L17.6733 37.3369L15.8444 35.8453L13.9911 34.3898L12.4099 33.1861C11.8472 34.6024 11.3425 36.0318 10.8868 37.4481L10.945 37.484L11.7768 37.9223L12.6332 38.3999L13.4651 38.8774L14.2969 39.3779L15.1166 39.8914L15.9484 40.4442L16.7467 40.9969L17.5327 41.5366L18.3309 42.1254L19.1291 42.7011L19.8906 43.2898L20.0313 43.401C19.4564 43.666 18.8936 43.9538 18.3431 44.2776L17.8966 44.0127L16.4439 43.1361L14.9545 42.2955L13.4651 41.4941L11.9756 40.7287L10.4526 39.9634L10.159 39.8129C9.72469 41.3535 9.36073 42.9235 9.03349 44.4902L10.0886 44.9285L11.7065 45.6187L13.3366 46.3579L14.4162 46.8583L12.049 48.4512L11.2172 48.026L10.162 47.5616L9.09466 47.084L8.56863 46.8583C8.33314 48.2746 8.11292 49.7432 7.94777 51.1955C7.94777 51.1955 7.93555 51.1955 7.93555 51.2086C10.5627 52.2127 13.2357 52.9748 15.9545 53.5407C18.9334 54.1785 22.4841 54.7182 26.1878 54.7313C30.2921 54.7705 34.0172 54.3061 37.1031 53.7173C37.2101 53.7042 37.3141 53.6781 37.4211 53.6683C37.5985 53.6323 37.7606 53.593 37.938 53.557C38.7118 53.4066 39.4855 53.23 40.2593 53.0304C42.0882 52.566 43.5531 52.1015 44.5746 51.7515C45.1374 51.5651 45.6879 51.3623 46.2384 51.1759C44.4921 35.5902 37.7025 21.2475 27.1053 10.6924M30.3992 44.029C31.3717 43.316 31.4788 43.1623 31.4421 43.6398L30.7142 45.0299C30.445 45.7201 29.448 44.7552 30.3992 44.0258M22.6615 45.9327C23.108 45.2687 23.6004 44.6669 24.1509 44.101C24.2335 44.0258 24.5027 43.6987 24.6066 43.6856C24.6189 43.6856 24.6066 43.7347 24.573 43.7739C24.5485 43.8099 24.5271 43.8491 24.5271 43.8622C24.2916 44.2874 22.6738 47.398 22.6523 47.9606C22.6279 48.5624 23.9063 48.1732 24.2458 47.8985C24.4446 47.7349 24.4323 47.4111 24.4445 47.1069C24.4568 46.5803 24.1876 46.1158 24.6189 45.7037C24.9125 45.429 25.5089 45.164 25.8606 45.4159C26.7047 46.0046 25.4507 47.398 25.0746 47.8723C24.6066 48.4349 24.0653 48.9386 23.4812 49.3147C23.1295 49.5404 22.1905 50.2927 21.793 49.9035C21.7348 49.8414 21.7104 49.74 21.689 49.6647C21.3617 48.2354 21.9245 47.0448 22.6615 45.9294M23.1172 53.0762C22.7319 53.5538 21.1721 53.5276 21.1721 53.5276C21.1721 53.5276 22.4505 52.3632 23.1539 51.7842C23.8696 51.2086 25.1571 49.4783 25.674 48.8503C26.1909 48.2354 27.0686 47.0088 27.3255 46.6555C27.5824 46.3055 28.3806 45.3766 28.3806 45.3766C28.3806 45.3766 28.8486 46.3056 27.6772 47.8592C27.1971 48.5003 25.989 49.704 25.3804 50.4563C24.7718 51.2086 23.5056 52.5758 23.1172 53.0762ZM33.5523 45.3537C33.4453 45.3799 33.3168 45.3799 33.2251 45.429C33.0508 45.5042 33.0966 45.5794 33.1089 45.792C33.1089 46.1943 33.0844 46.6065 33.0141 47.0088C32.9804 47.2214 32.9315 47.4471 32.8153 47.6237C32.5706 47.9868 32.1241 48.062 31.8305 48.376C31.5246 48.69 31.2341 49.0531 30.9741 49.4031C30.7968 49.6287 30.6347 50.381 30.5857 50.682C30.3992 51.7483 28.0656 52.6739 26.9157 52.6739C25.252 52.6739 26.5059 51.6076 26.775 51.395C26.7995 51.3688 26.8331 51.3558 26.8698 51.3558L29.1208 51.1039C30.0933 50.9894 30.3992 49.5502 29.9771 49.161C29.5551 48.7718 29.1575 48.6475 29.1085 47.8559C29.0749 47.4929 29.5887 46.0373 30.7723 46.7144C31.4298 47.0906 32.0965 47.0284 32.0965 47.0284L32.1088 46.7537L32.0017 45.5009C31.2402 45.6514 31.439 45.0757 31.5338 44.7977C31.6164 44.5229 31.8978 44.5982 32.5767 44.2711C33.1853 43.9702 33.4208 43.8328 33.5493 43.8328L33.7022 45.1117C33.7022 45.2131 33.6441 45.3112 33.5493 45.3505"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col justify-center gap-1">
+                        <h1 class="text-3xl font-bold text-white">نظام إدارة النماذج</h1>
+                        <span class="text-white">عرض وإدارة النماذج الداخلية والخارجية</span>
+                    </div>
+
+                </div>
+                <div class="flex gap-10">
+                    <div class="hidden md:flex">
+                        @if (User.Identity?.IsAuthenticated == false)
+                        {
+                            <a asp-controller="Account" asp-route-returnUrl="@returnUrl" asp-action="SignIn"
+                                class="hover:!text-[#54BBBD] rounded font-medium hidden md:block  items-center w-40 justify-center py-4  text-xl text-white "
+                                :class="{'!text-black' :fixed || open}">
+                                تسجيل الدخول
+                            </a>
+                        }
+                        else
+                        {
+                            <div class="flex items-center justify-end flex-1">
+                                <div class="flex items-center justify-center ">
+                                    <div x-on:click="openUser = !openUser" class="relative py-3 ml-5 "
+                                        :class="{'border-indigo-700 transform transition duration-300 ': openUser }">
+                                        <div class="flex items-center justify-center space-x-4 cursor-pointer gap-x-4">
+                                            <div class="w-10 h-10 border-gray-900 rounded-full shadow border-1">
+                                                <img src="~/icons/profile.svg" alt="" class="object-cover w-full h-full">
+                                            </div>
+                                        </div>
+                                        <div x-show="openUser" x-on:click.away="openUser=false" x-transition
+                                            class="absolute px-5 py-3 mt-5 bg-white border rounded-lg w-60 left-1 dark:bg-gray-800 dark:border-transparent">
+                                            <ul class="flex flex-col gap-2 font-medium dark:text-white">
+                                                <li class="py-2 text-sm border-b text-muted border-neutral-400">
+                                                    مرحبا
+                                                    @User.Identity.Name
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Account" asp-action="SignOut"
+                                                        class="hover:text-[#54BBBD]">
+                                                        تسجيل الخروج
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-1 bg-[#F9FAFB]">
+            <div class="hidden md:flex bg-[#F1F2F5] w-full max-w-xs min-h-full py-32">
+                <div class="flex flex-col w-full gap-24 py-5 px-9">
+                    <ul class="flex flex-col w-full gap-2">
+                        <li>
+                            <a asp-controller="Home" asp-action="Index"
+                                class="flex items-center w-full gap-6 px-6 py-2 rounded-xl"
+                                :class="getRouteUrl === 'index' ? 'bg-[#E8E8EF]' : 'bg-white'">
+                                <h4 class="items-center flex-1 text-lg text-light-gray-700">الصفحة الرئيسية</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w-screen min-h-[80vh] px-8 py-4">
+                <div x-show="isLoading" class="flex items-center justify-center h-full my-auto justify-items-center">
+                    @await Html.PartialAsync("_Spinner")
+                </div>
+
+                <div x-show="!isLoading">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <section class="z-20 flex">
+            <footer class="w-screen text-white ">
+                <div class="bg-[#ABADF5] py-2">
+                    <div class="w-full px-10 mx-auto max-w-7xl">
+                        <div class="p-4 text-center">
+                            <p>جميع الحقوق محفوظة لأكاديمية طويق @DateTime.Now.Year</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    @* Hidden input area *@
+    <div class="hidden">
+        @* <input id="token" type="hidden" value="@AntiForgery.GetAndStoreTokens(ViewContext.HttpContext).RequestToken">
+        *@
+        <input id="isAuthenticated" type="hidden" value="@(User.Identity?.IsAuthenticated == true ? " true" : "false")">
+    </div>
+    <script>
+        window.token = '@AntiForgery.GetAndStoreTokens(ViewContext.HttpContext).RequestToken';
+    </script>
+    <script src="~/dist/runtime/runtime.js" asp-append-version="true"></script>
+    <script src="~/dist/libs/libs.js" asp-append-version="true"></script>
+    <script src="~/dist/vendors/vendors.js" asp-append-version="true"></script>
+    <script src="~/dist/app/app.js" asp-append-version="true" defer></script>
+
+    @await RenderSectionAsync("Scripts", false)
+
+</body>
+
+</html>
